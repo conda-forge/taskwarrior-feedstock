@@ -12,7 +12,7 @@ source:
     - fix-cmake-corrosion.patch
 
 build:
-  number: 1
+  number: 2
   skip:
     # Possibly support Windows in the future
     # Refer to https://github.com/GothenburgBitFactory/taskwarrior/issues/2159
