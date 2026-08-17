@@ -1,5 +1,5 @@
 context:
-  version: "3.4.2"
+  version: "3.5.0"
 
 package:
   name: taskwarrior
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v${{ version }}/task-${{ version }}.tar.gz
-  sha256: d302761fcd1268e4a5a545613a2b68c61abd50c0bcaade3b3e68d728dd02e716
+  sha256: 9ea64b411f8314414f440ec765dfdf5a86c9f6159df47e2f60cff3db6b31157a
   patches:
     - fix-cmake-corrosion.patch
 
 build:
-  number: 1
+  number: 0
   skip:
     # Possibly support Windows in the future
     # Refer to https://github.com/GothenburgBitFactory/taskwarrior/issues/2159
@@ -35,11 +35,11 @@ requirements:
 
 tests:
   - script:
-    - touch ~/.taskrc
-    - task add Hello Tasks
-    - task list | grep "Hello Tasks"
-    - task --version
-    - task help
+      - touch ~/.taskrc
+      - task add Hello Tasks
+      - task list | grep "Hello Tasks"
+      - task --version
+      - task help
 
 about:
   homepage: https://taskwarrior.org
